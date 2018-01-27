@@ -7,8 +7,13 @@
 <body>
 
 <div id="app">
+    <input type="text" v-model="newTodoTitle" v-on:keyup.enter="addTodo(newTodoTitle)">
     <ul>
-        <li v-for="item in items">{{ item.title }}</li>
+        <li v-for="item in items">
+            <label>
+                <input type="checkbox" v-model="this.isChecked"> {{ item.title }}
+            </label>
+        </li>
     </ul>
 </div>
 
